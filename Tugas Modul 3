@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tugas Implementasi Interface</title>
+</head>
+<body>
+<form name="formTugas" id="tugasku" action="">
+
+<input type="text" name="username" id="username" placeholder="Username" pattern="^[a-z0-9_-]{3,15}$" required ><br>
+<input type="password" name="password" id="pass" placeholder="Password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$" onChange="onChange()" required ><br>
+<input type="password" name="repeat" id="repeat" placeholder="UlangiPassword" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$" onChange="onChange()" required> <br>
+<input type="text" name="email" id="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+[.]+[a-zA-Z]{2,10}$" placeholder="Example@gmail.com" required><br>
+<input type=”text” name=”telp” id=”telp” placeholder=”NomorTelpon” pattern="^[0-9]{10,12}$" required /><br>
+<textarea id="alamat" style="width: 167px;" required ></textarea><br>
+<input type="submit" name="submit" value="Submit" >
+</form>
+<script>
+function onChange() {
+    const password = document.querySelector('input[name=password]');
+    const confirm = document.querySelector('input[name=repeat]');
+    if (confirm.value === password.value) {
+      confirm.setCustomValidity('');
+    } else {
+      confirm.setCustomValidity('Passwords do not match');
+    }
+  }
+</script>
+
+</body>
+</html>
